@@ -1,0 +1,1 @@
+web: gunicorn techie.wsgi
