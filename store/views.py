@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    page_tilte = "Homepage"
+    page_title = "Homepage"
 
     happy_customers = [
         {
@@ -41,16 +41,41 @@ def home(request):
         },
     ]
 
+    home_slider = [
+        {
+            "image": "images/hero_bg4.jpg",
+            "title": "Techie Health",
+            "subtitle": "We are a family of medical and health care providers",
+            "link": "https://techiehealth.com",
+            "link_topic": "home"
+        },
+        {
+            "image": "images/hero_bg_2.jpg",
+            "title": "<strong class='text-brown'>TECHIEHEALTH</strong> Opens 24 Hours",
+            "subtitle": "We are a family of medical and health care providers",
+            "link": "https://techiehealth.com",
+            "link_topic": "home"
+        },
+        {
+            "image": "images/hero_bg3.jpg",
+            "title": "New Medicine <strong class='text-brown'>Everyday</strong>",
+            "subtitle": "We Stock our store nearly everyday. You can always get what you want.",
+            "link": "https://techiehealth.com",
+            "link_topic": "home"
+        },
+    ]
+
     context = {
-        "page_tilte": page_tilte,
+        "page_title": page_title,
         "products": [1, 2, 3, 4, 5],
         "testimonials": happy_customers,
-        "why_us": why_us
+        "why_us": why_us,
+        "home_slider": home_slider,
     }
     return render(request, 'store/home.html', context=context)
 
 def about(request):
-    page_tilte = "About us"
+    page_title = "About us"
 
     upper = [
         {
@@ -89,17 +114,17 @@ def about(request):
     ]
 
     context = {
-        "page_tilte": page_tilte,
+        "page_title": page_title,
         "upper": upper,
         "leaders": leaders,
     }
     return render(request, 'store/about.html', context=context)
 
 def contact(request):
-    page_tilte = "Contact Us"
+    page_title = "Contact Us"
 
 
     context = {
-        "page_tilte": page_tilte,
+        "page_title": page_title,
     }
     return render(request, 'store/contact.html', context=context)
